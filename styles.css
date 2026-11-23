@@ -164,7 +164,7 @@ small{font-size:.9rem}
 .footer-bottom{margin-top:34px;padding-top:18px;border-top:1px solid rgba(165,149,138,.24);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--muted);font-size:.96rem}
 
 @media (max-width: 1050px){
-  .hero-grid,.brand-ecosystem,.grid-4,.grid-3,.contact-layout,.footer-grid,.metric-grid,.stat-row{grid-template-columns:repeat(2,1fr)}
+  .hero-grid,.grid-4,.grid-3,.contact-layout,.footer-grid,.metric-grid,.stat-row{grid-template-columns:repeat(2,1fr)}
   .split,.split.reverse{grid-template-columns:1fr}
 }
 @media (max-width: 900px){
@@ -256,7 +256,6 @@ small{font-size:.9rem}
 .photo-caption{position:absolute;left:max(28px,calc((100vw - var(--max))/2));bottom:34px;background:rgba(243,241,238,.92);backdrop-filter:blur(10px);border-radius:20px;padding:18px 22px;box-shadow:var(--shadow);max-width:420px}
 .photo-caption span{display:block;text-transform:uppercase;letter-spacing:.16em;font-size:.82rem;color:var(--taupe-deep);font-weight:700;margin-bottom:5px}
 .photo-caption strong{font-family:"Cormorant Garamond",Georgia,serif;font-size:1.8rem;line-height:1.05;color:var(--teal-deep)}
-.brand-ecosystem.four-up{grid-template-columns:repeat(2,1fr)}
 .brand-card{min-height:285px}
 .brand-card img{max-width:100%}
 .image-frame img{min-height:420px}
@@ -273,7 +272,8 @@ small{font-size:.9rem}
   .hero-inner{padding:64px 0 56px}
   .hero-summary{grid-template-columns:1fr}
   .summary-card-wide{grid-column:auto}
-  .brand-ecosystem.four-up{grid-template-columns:1fr}
+  .brand-ecosystem.brand-ordered{grid-template-columns:1fr}
+  .brand-ordered .brand-card{min-height:0}
 }
 @media(max-width:600px){
   .logo img{width:175px;height:52px}
@@ -440,8 +440,14 @@ small{font-size:.9rem}
 .summary-card h3{font-size:1.55rem}
 .summary-card ul{margin:0;padding-left:20px}
 .summary-card li{margin:7px 0}
-.brand-ecosystem.brand-ordered .brand-card img{height:48px}
-.brand-ecosystem.brand-ordered .brand-card img.logo-gbt{height:22px;width:auto;max-width:140px}
+.brand-ordered .brand-card .mini-label{letter-spacing:.12em}
+.brand-ordered .brand-card img{
+  display:block;
+  height:48px;
+  width:100%;
+  max-width:220px;
+  object-position:left center;
+}
 #tecnologia .section-head .lead{max-width:950px}
 .applications-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .app-card{text-align:center;padding-top:22px}
@@ -507,10 +513,9 @@ small{font-size:.9rem}
   object-position:center center;
   display:block;
 }
-.brand-card img.logo-gbt,
-.brand-ecosystem.brand-ordered .brand-card img.logo-gbt{
-  height:32px !important;
-  width:auto;
+.brand-ordered .brand-card img.logo-gbt{
+  height:48px;
+  width:100%;
   max-width:180px;
 }
 .logo-showcase img.logo-gbt,
